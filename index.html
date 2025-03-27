@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メガネ店マーケティング戦略ミーティング - グラフィックレコーディング</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700;800&family=Kaisei+Decol&family=Yomogi&family=Zen+Kurenaido&display=swap');
+        
+        :root {
+            --color-1: #593C47;
+            --color-2: #F2E63D;
+            --color-3: #F2C53D;
+            --color-4: #F25C05;
+            --color-5: #F24405;
+            --text-main: #334155;
+            --text-heading: #1e40af;
+            --bg-card: rgba(255, 255, 255, 0.85);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            background-color: #f8fafc;
+            color: var(--text-main);
+            line-height: 1.4;
+            padding: 0;
+            margin: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23593c47' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid var(--color-3);
+            padding-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--color-4), var(--color-5));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .date {
+            font-size: 16px;
+            color: #475569;
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        
+        .column {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .card {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--color-3), var(--color-4));
+        }
+        
+        h2 {
+            font-size: 18px;
+            color: var(--text-heading);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        h2 .icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background-color: var(--color-4);
+            border-radius: 50%;
+            color: white;
+            font-size: 14px;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 14px;
+        }
+        
+        .highlight {
+            background: linear-gradient(transparent 60%, var(--color-2) 60%);
+            font-weight: 500;
+            padding: 0 2px;
+        }
+        
+        .highlight-red {
+            background: linear-gradient(transparent 60%, var(--color-5) 40%);
+            font-weight: 500;
+            padding: 0 2px;
+            color: #222;
+        }
+        
+        .note {
+            background-color: rgba(255, 255, 255, 0.7);
+            border-left: 3px solid var(--color-4);
+            padding: 0.8rem;
+            margin: 1rem 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 13px;
+        }
+        
+        .arrow {
+            display: block;
+            width: 50px;
+            height: 30px;
+            margin: 1rem auto;
+            position: relative;
+        }
+        
+        .arrow svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .bubble {
+            background-color: rgba(242, 230, 61, 0.15);
+            border: 2px dashed var(--color-3);
+            border-radius: 20px;
+            padding: 1rem;
+            margin: 1rem 0;
+            position: relative;
+        }
+        
+        .bubble::before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(242, 230, 61, 0.15);
+            border-right: 2px dashed var(--color-3);
+            border-bottom: 2px dashed var(--color-3);
+            top: -10px;
+            left: 20px;
+            transform: rotate(45deg);
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: var(--color-3);
+            color: #222;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hand-drawn {
+            border: 2px solid #000;
+            border-radius: 15px;
+            position: relative;
+            padding: 1rem;
+            margin: 1rem 0;
+            border: 2px solid;
+            border-color: #000;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        }
+        
+        .hand-drawn-green {
+            border-color: #2C8A00;
+            background-color: rgba(44, 138, 0, 0.05);
+        }
+        
+        .hand-drawn-orange {
+            border-color: var(--color-4);
+            background-color: rgba(242, 92, 5, 0.05);
+        }
+        
+        .stat {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--color-5);
+            margin-right: 1rem;
+        }
+        
+        .stat-text {
+            flex: 1;
+            font-size: 14px;
+        }
+        
+        .checklist {
+            margin: 1rem 0;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+        
+        .checklist-icon {
+            margin-right: 0.5rem;
+            color: var(--color-4);
+            font-weight: bold;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 0.2em;
+            vertical-align: middle;
+        }
+        
+        .process {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .process-step {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 0.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .process-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background-color: var(--color-3);
+            color: #222;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        
+        .section-divider {
+            display: flex;
+            align-items: center;
+            margin: 1.5rem 0;
+        }
+        
+        .section-divider::before,
+        .section-divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 2px dashed var(--color-3);
+        }
+        
+        .section-divider-text {
+            padding: 0 1rem;
+            color: var(--color-4);
+            font-weight: 500;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .box-connection {
+            position: relative;
+        }
+        
+        .box-connection::after {
+            content: "";
+            position: absolute;
+            bottom: -1.5rem;
+            left: 50%;
+            width: 2px;
+            height: 1.5rem;
+            background-color: var(--color-3);
+        }
+        
+        .icon-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        
+        .icon-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+        }
+        
+        .icon-list li svg {
+            flex-shrink: 0;
+            margin-right: 0.5rem;
+            color: var(--color-4);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background-color: var(--color-3);
+            color: #222;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .badge-outline {
+            background-color: transparent;
+            border: 1px solid var(--color-3);
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            .column {
+                width: 100%;
+            }
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--color-3);
+            font-size: 12px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>メガネ店マーケティング戦略ミーティング</h1>
+            <div class="date">2025年3月24日</div>
+        </header>
+        
+        <div class="content">
+            <!-- 左カラム -->
+            <div class="column">
+                <div class="card">
+                    <h2><span class="icon">🔍</span>Googleマップ・口コミ戦略</h2>
+                    <div class="hand-drawn">
+                        <p><span class="highlight">Googleマップの口コミ</span>は実際に多くの顧客に見られており、特に子供用メガネ（トマト）の購入者にとって重要な情報源となっています。</p>
+                    </div>
+                    
+                    <div class="stat">
+                        <div class="stat-number">800+</div>
+                        <div class="stat-text">大手チェーンの口コミ数。競合は多くの口コミを獲得して集客力を高めています。</div>
+                    </div>
+                    
+                    <div class="bubble">
+                        <p>「<span class="highlight-red">口コミを頑張ればトマトが売れる！</span>」</p>
+                        <p>子供メガネは特に親世代が口コミを重視する傾向にあり、Googleマップの効果的な活用が売上に直結します。</p>
+                    </div>
+                    
+                    <div class="note">
+                        <p>👉 多くの眼鏡店が「悪い口コミが書かれるのではないか」と懸念しているが、それは逆にマーケティング機会である</p>
+                    </div>
+                    
+                    <div class="section-divider">
+                        <span class="section-divider-text">マップパートナー活用</span>
+                    </div>
+                    
+                    <ul class="icon-list">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            マップパートナーで店舗情報を管理
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            口コミをしっかり収集・管理
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            月額5万円程度で一連のフローを管理可能
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h2><span class="icon">📊</span>ローカルSEO対策</h2>
+                    
+                    <div class="hand-drawn hand-drawn-orange">
+                        <p><span class="highlight">NAP情報（名前・住所・電話番号）</span>が全てのプラットフォームで一致していることが重要です。</p>
+                    </div>
+                    
+                    <div class="process">
+                        <div class="process-step">
+                            <div class="process-number">1</div>
+                            <div>重要なキーワードを盛り込むタイトル設定</div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-number">2</div>
+                            <div>GPP（Googleビジネスプロフィール）の完全な最適化</div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-number">3</div>
+                            <div>業種情報の整備と更新</div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-number">4</div>
+                            <div>写真の充実（店舗雰囲気が伝わる写真が必須）</div>
+                        </div>
+                    </div>
+                    
+                    <div class="note">
+                        <p>🚫 <span class="highlight-red">低評価の口コミを消そうとするのは百害あって一利なし</span>。むしろ適切に対応することで信頼を築くチャンスに。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 中央カラム -->
+            <div class="column">
+                <div class="card">
+                    <h2><span class="icon">📹</span>ウェビナー・アーカイブ戦略</h2>
+                    
+                    <div class="hand-drawn">
+                        <p>現状、ウェビナーコンテンツを視聴者に認知させる仕組みが十分ではありません。以下のような課題があります：</p>
+                    </div>
+                    
+                    <ul class="icon-list">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                            アーカイブ動画に概要やURLが貼れない状態
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                            アーカイブを認知させる手法が十分に機能していない
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                            ウェビナー視聴後の顧客の意図を把握する仕組みの改善が必要
+                        </li>
+                    </ul>
+                    
+                    <div class="arrow">
+                        <svg viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 10 C40 10, 60 50, 90 50 L80 40 M90 50 L80 60" stroke="#F2C53D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="hand-drawn hand-drawn-green">
+                        <p><span class="highlight">改善案：アンケートシステムの活用</span></p>
+                        <div class="grid-2">
+                            <div>
+                                <div class="tag">視聴者体験</div>
+                                <p>アーカイブに「アンケート＋プレゼント獲得URL」を追加</p>
+                            </div>
+                            <div>
+                                <div class="tag">データ収集</div>
+                                <p>bitlyでクリック数を計測</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="note">
+                        <p>💡 視聴者がアンケートに回答 → プレゼント獲得 → リスト化 → フォローアップという流れを構築</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2><span class="icon">🔄</span>集客サイクルの最適化</h2>
+                    
+                    <div class="bubble">
+                        <p>「知る→選ぶ→決める→来店する→購入する」という顧客の流れで、一つでも抜けると全体の効果が落ちます（バケツの穴理論）</p>
+                    </div>
+                    
+                    <div class="hand-drawn">
+                        <p>Google口コミを起点とした総合的なアプローチ：</p>
+                        <ol style="padding-left: 1.5rem;">
+                            <li>口コミを増やしてMEO（Map Engine Optimization）で認知向上</li>
+                            <li>ホームページで情報提供・予約受付</li>
+                            <li>現場対応の質をアンケートで評価</li>
+                            <li>全体のプロセスを一貫して管理</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="section-divider">
+                        <span class="section-divider-text">提案価値</span>
+                    </div>
+                    
+                    <div class="stat">
+                        <div class="stat-number">5万円/月</div>
+                        <div class="stat-text">個別サービスを全て導入するよりも低コストで総合的なマーケティング管理が可能</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 右カラム -->
+            <div class="column">
+                <div class="card">
+                    <h2><span class="icon">🤖</span>AI活用とコンテンツ作成</h2>
+                    
+                    <div class="hand-drawn">
+                        <p>Claude 3.7 Sonnetなどの最新AIを活用することで、クオリティの高いコンテンツを効率的に作成できます。</p>
+                    </div>
+                    
+                    <div class="bubble">
+                        <p>グラフィックレコーディングのプロンプトを活用して、<span class="highlight">音声からビジュアル資料を自動生成</span>することが可能に！</p>
+                    </div>
+                    
+                    <div class="hand-drawn hand-drawn-orange">
+                        <p>実際の活用例：</p>
+                        <p>10分程度の会話音声から、営業資料を自動生成</p>
+                        <p>SVG形式で出力してIllustratorで編集可能</p>
+                    </div>
+                    
+                    <div class="note">
+                        <p>🔑 眼鏡業界でのAI活用は、専門性の高いコンテンツ作成に特に有効です。</p>
+                    </div>
+                    
+                    <div class="section-divider">
+                        <span class="section-divider-text">社内AI活用</span>
+                    </div>
+                    
+                    <ul class="icon-list">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 11 12 14 22 4"></polyline>
+                                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                            </svg>
+                            社内でAI専門家を育成するより外部リソースの活用が効率的
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 11 12 14 22 4"></polyline>
+                                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                            </svg>
+                            営業部門向けのAIマーケティングセミナーの開催提案
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h2><span class="icon">👓</span>眼鏡業界の特殊課題</h2>
+                    
+                    <div class="hand-drawn">
+                        <p>子供メガネ（トマト）は特に重要な商品で、口コミ戦略との連携が売上向上に効果的です。</p>
+                    </div>
+                    
+                    <div class="grid-2">
+                        <div>
+                            <div class="tag">治療用眼鏡</div>
+                            <p>弱視治療用眼鏡の口コミが増加傾向</p>
+                        </div>
+                        <div>
+                            <div class="tag">親世代</div>
+                            <p>特に口コミを重視して店舗選定</p>
+                        </div>
+                    </div>
+                    
+                    <div class="section-divider">
+                        <span class="section-divider-text">眼科連携</span>
+                    </div>
+                    
+                    <div class="hand-drawn hand-drawn-green">
+                        <p>眼科医との連携強化策：</p>
+                        <ul style="padding-left: 1.5rem;">
+                            <li>眼科からの紹介を増やす取り組み</li>
+                            <li>連携手帳の作成アイデア</li>
+                            <li>定期受診サイクルを眼鏡店にも還流させる仕組み</li>
+                            <li>「アイフレイル」概念を活用した連携強化</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bubble">
+                        <p><span class="highlight">ポイント：安価なメガネチェーンの広がりにより「見え方」の価値が矮小化</span></p>
+                        <p>本来のパフォーマンスや見え方の質的向上の価値を伝えることが重要に</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2><span class="icon">📅</span>次のステップ</h2>
+                    
+                    <div class="checklist">
+                        <div class="checklist-item">
+                            <div class="checklist-icon">✓</div>
+                            <div>ウェビナー用アンケートの共有と設定</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-icon">✓</div>
+                            <div>bitlyでURL設定とクリック数の測定</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-icon">✓</div>
+                            <div>営業部向け提案資料の作成</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-icon">✓</div>
+                            <div>ウェビナー配信（3月28日15時〜）</div>
+                        </div>
+                    </div>
+                    
+                    <div class="note">
+                        <p>📌 次回ウェビナー資料では「口コミを頑張ればトマト（子供メガネ）が売れる」という切り口を強調</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            グラフィックレコーディング © 2025 メガネマーケティング戦略会議
+        </footer>
+    </div>
+</body>
+</html>
