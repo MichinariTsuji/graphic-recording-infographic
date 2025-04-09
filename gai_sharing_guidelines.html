@@ -1,0 +1,753 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成AIコンテンツ共有ガイドライン</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&family=Kaisei+Decol&family=Yomogi&family=Zen+Kurenaido&display=swap');
+        
+        body {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            background-color: #fdf6e9;
+            margin: 0;
+            padding: 20px;
+            color: #593C47;
+            line-height: 1.4;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(89, 60, 71, 0.1);
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #F25C05;
+            padding-bottom: 15px;
+            position: relative;
+        }
+        
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #F24405;
+            border-radius: 3px;
+        }
+        
+        .title {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(45deg, #593C47, #F25C05);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 0;
+            font-family: 'Kaisei Decol', serif;
+        }
+        
+        .date {
+            font-size: 14px;
+            color: #ffffff;
+            padding: 5px 10px;
+            background-color: #593C47;
+            border-radius: 8px;
+            transform: rotate(2deg);
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .main-theme {
+            text-align: center;
+            margin: 20px 0 40px;
+            position: relative;
+        }
+        
+        .main-theme-text {
+            font-size: 32px;
+            font-weight: 800;
+            background: linear-gradient(45deg, #593C47, #F25C05);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            padding: 10px 30px;
+            position: relative;
+            z-index: 1;
+            font-family: 'Kaisei Decol', serif;
+        }
+        
+        .main-theme-text::before {
+            content: "";
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background-color: rgba(242, 197, 61, 0.5);
+            z-index: -1;
+            transform: rotate(-1deg);
+        }
+        
+        .main-theme::after {
+            content: "🔍";
+            font-size: 36px;
+            position: absolute;
+            right: 25%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .main-theme::before {
+            content: "📋";
+            font-size: 36px;
+            position: absolute;
+            left: 25%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .column {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .card {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(89, 60, 71, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #F2C53D, #F25C05);
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            color: #593C47;
+            margin-top: 0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-left: 30px;
+            font-family: 'Zen Kurenaido', sans-serif;
+            font-weight: 700;
+        }
+        
+        .section-title::before {
+            content: "✏️";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .data-chart {
+            padding: 15px;
+            background-color: rgba(242, 197, 61, 0.1);
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .bar-container {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .bar-label {
+            width: 120px;
+            text-align: right;
+            padding-right: 10px;
+            font-weight: bold;
+        }
+        
+        .bar {
+            height: 22px;
+            border-radius: 20px;
+            background: linear-gradient(90deg, #F2C53D, #F25C05);
+            position: relative;
+            transition: width 1s ease-in-out;
+        }
+        
+        .bar-value {
+            position: absolute;
+            right: -40px;
+            top: 1px;
+            font-weight: bold;
+            color: #593C47;
+        }
+        
+        .highlight {
+            background-color: #F2E63D;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-block;
+            transform: rotate(-1deg);
+            margin: 0 2px;
+            color: #593C47;
+        }
+        
+        .quote {
+            font-family: 'Yomogi', cursive;
+            padding: 15px;
+            background-color: rgba(242, 197, 61, 0.1);
+            border-left: 4px solid #F25C05;
+            border-radius: 0 10px 10px 0;
+            margin: 15px 0;
+            position: relative;
+        }
+        
+        .quote::before {
+            content: """;
+            font-size: 50px;
+            color: rgba(242, 196, 60, 0.3);
+            position: absolute;
+            left: 5px;
+            top: -10px;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 3px 8px;
+            background-color: #F2E63D;
+            color: #593C47;
+            border-radius: 15px;
+            font-size: 12px;
+            margin: 4px 4px 4px 0;
+            transform: rotate(1deg);
+            box-shadow: 1px 1px 3px rgba(89, 60, 71, 0.1);
+        }
+        
+        .arrow {
+            position: relative;
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        
+        .arrow::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #F25C05;
+            font-weight: bold;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 12px;
+            color: #593C47;
+            padding-top: 15px;
+            border-top: 1px dashed #F25C05;
+        }
+        
+        .handdrawn-box {
+            border: 2px solid #F25C05;
+            border-radius: 15px;
+            padding: 15px;
+            margin: 15px 0;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 3px 3px 0 rgba(242, 91, 5, 0.2);
+            transform: rotate(-0.5deg);
+        }
+        
+        .handdrawn-box-title {
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background-color: white;
+            padding: 0 10px;
+            font-weight: bold;
+            color: #F25C05;
+        }
+        
+        .highlight-marker {
+            background: linear-gradient(transparent 60%, #F2E63D 40%);
+            padding: 0 2px;
+        }
+        
+        .story-point {
+            display: flex;
+            align-items: flex-start;
+            margin: 15px 0;
+        }
+        
+        .story-number {
+            width: 30px;
+            height: 30px;
+            background-color: #F25C05;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .story-content {
+            flex-grow: 1;
+        }
+        
+        .milestone {
+            text-align: center;
+            position: relative;
+            margin: 30px 0;
+        }
+        
+        .milestone-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #F2C53D;
+            z-index: 1;
+        }
+        
+        .milestone-text {
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: white;
+            position: relative;
+            z-index: 2;
+            font-weight: bold;
+            border: 2px solid #F2C53D;
+            border-radius: 20px;
+            color: #593C47;
+        }
+        
+        .insights-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .insight-bubble {
+            flex: 1;
+            min-width: 120px;
+            padding: 15px;
+            background-color: rgba(242, 230, 61, 0.15);
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .insight-bubble::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 10px 10px 0;
+            border-style: solid;
+            border-color: rgba(242, 230, 61, 0.15) transparent transparent;
+        }
+        
+        .scope-box {
+            text-align: center;
+            padding: 15px;
+            background-color: rgba(242, 197, 61, 0.2);
+            border-radius: 10px;
+            margin: 15px 0;
+            position: relative;
+        }
+        
+        .scope-box-title {
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background-color: #F25C05;
+            color: white;
+            padding: 2px 15px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .scope-icon {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        
+        .scope-name {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #593C47;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 10px 0;
+        }
+        
+        .checklist-icon {
+            color: #F25C05;
+            margin-right: 10px;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        
+        .process-flow {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .process-flow::before {
+            content: "";
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: linear-gradient(90deg, #F2E63D, #F25C05);
+            z-index: 1;
+        }
+        
+        .process-step {
+            width: 22%;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .process-circle {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border: 3px solid #F25C05;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 10px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .process-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #F25C05;
+        }
+        
+        .process-text {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            .column {
+                width: 100%;
+            }
+            .process-flow {
+                flex-direction: column;
+                align-items: center;
+            }
+            .process-flow::before {
+                top: 0;
+                bottom: 0;
+                left: 40px;
+                right: auto;
+                width: 3px;
+                height: 100%;
+            }
+            .process-step {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+            .process-circle {
+                margin: 0 20px 0 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">生成AIコンテンツ共有ガイドライン</h1>
+            <div class="date">2025年4月9日</div>
+        </div>
+        
+        <div class="main-theme">
+            <h2 class="main-theme-text">公開範囲別のリスク管理と基準</h2>
+        </div>
+        
+        <div class="content">
+            <div class="column">
+                <div class="card">
+                    <h2 class="section-title">基本方針とコンテンツ公開区分</h2>
+                    <div class="quote">
+                        <p>生成AIについては<span class="highlight">法整備が進んでおらず</span>解釈に幅があるため、<span class="highlight-marker">公開範囲に応じたリスク管理</span>が必要です。</p>
+                    </div>
+                    
+                    <div class="handdrawn-box">
+                        <div class="handdrawn-box-title">公開範囲の区分</div>
+                        <div class="insights-container">
+                            <div class="insight-bubble">
+                                <div style="font-weight: bold; color: #F25C05;">内部共有</div>
+                                <div>社内限定</div>
+                            </div>
+                            <div class="insight-bubble">
+                                <div style="font-weight: bold; color: #F25C05;">限定公開</div>
+                                <div>業界内限定</div>
+                            </div>
+                            <div class="insight-bubble">
+                                <div style="font-weight: bold; color: #F25C05;">一般公開</div>
+                                <div>広範囲</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="scope-box">
+                        <div class="scope-box-title">内部共有</div>
+                        <div class="scope-icon">🔒</div>
+                        <div class="scope-name">社内限定</div>
+                        <div class="checklist-item">
+                            <div class="checklist-icon">✓</div>
+                            <div>社内および直接関係のある限られた関係者内</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-icon">✓</div>
+                            <div>チャレンジングな内容や実験的な取り組みも許容</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-icon">✓</div>
+                            <div>実践事例や具体的な手法の共有を推奨</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2 class="section-title">インプットに関する基準</h2>
+                    <div class="story-point">
+                        <div class="story-number">1</div>
+                        <div class="story-content">
+                            <p><span class="highlight-marker">著作権で保護されている有料販売コンテンツ</span>を直接インプットすることは避ける</p>
+                        </div>
+                    </div>
+                    <div class="story-point">
+                        <div class="story-number">2</div>
+                        <div class="story-content">
+                            <p><span class="highlight-marker">個人情報や機密情報</span>を含むデータのインプットは行わない</p>
+                        </div>
+                    </div>
+                    <div class="story-point">
+                        <div class="story-number">3</div>
+                        <div class="story-content">
+                            <p><span class="highlight-marker">権利関係が不明確な素材</span>のインプットは慎重に判断する</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="column">
+                <div class="card">
+                    <h2 class="section-title">公開範囲別の基準</h2>
+                    
+                    <div class="scope-box">
+                        <div class="scope-box-title">限定公開</div>
+                        <div class="scope-icon">👥</div>
+                        <div class="scope-name">業界内限定</div>
+                        <div class="checklist-item">
+                            <div class="checklist-icon">✓</div>
+                            <div>業界内の専門家や関係者に限定した情報共有</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-icon">✓</div>
+                            <div>一定の判断力を持つ視聴者・読者を想定</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-icon">⚠️</div>
+                            <div>グレーゾーンの内容も状況に応じて含めることが可能</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-icon">❌</div>
+                            <div>明らかに解釈の幅が広がる内容は避ける</div>
+                        </div>
+                    </div>
+                    
+                    <div class="scope-box">
+                        <div class="scope-box-title">一般公開</div>
+                        <div class="scope-icon">🌐</div>
+                        <div class="scope-name">広範囲</div>
+                        <div class="checklist-item">
+                            <div class="checklist-icon">✓</div>
+                            <div>不特定多数が閲覧可能な情報発信（Webサイト、YouTube等）</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-icon">✓</div>
+                            <div>「白」と判断できる内容のみ公開</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-icon">❌</div>
+                            <div>解釈の幅が生じる内容、リスクのある内容は含めない</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2 class="section-title">出力・活用に関する基準</h2>
+                    <div class="handdrawn-box">
+                        <div class="handdrawn-box-title">出力の注意点</div>
+                        <div class="checklist-item">
+                            <div class="checklist-icon">✓</div>
+                            <div>生成AIサービスの<span class="highlight">利用規約に準拠</span>した使用方法を徹底する</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-icon">✓</div>
+                            <div>商用利用の場合は<span class="highlight">適切なプラン</span>（チームプラン等）を利用する</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-icon">✓</div>
+                            <div>出力内容の<span class="highlight-marker">事実確認と修正</span>を必ず行う</div>
+                        </div>
+                    </div>
+                    
+                    <div class="data-chart">
+                        <div style="text-align: center; font-weight: bold; margin-bottom: 10px;">コンテンツ公開前のチェック項目</div>
+                        <div class="bar-container">
+                            <div class="bar-label">閲覧者層</div>
+                            <div class="bar" style="width: 90%"></div>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar-label">情報拡散範囲</div>
+                            <div class="bar" style="width: 85%"></div>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar-label">解釈の幅</div>
+                            <div class="bar" style="width: 75%"></div>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar-label">リスク対応</div>
+                            <div class="bar" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="column">
+                <div class="card">
+                    <h2 class="section-title">事例紹介の注意点</h2>
+                    <div class="story-point">
+                        <div class="story-number">1</div>
+                        <div class="story-content">
+                            <p>具体的な素材や製品を示す際は、<span class="highlight-marker">権利関係に十分注意</span>する</p>
+                        </div>
+                    </div>
+                    <div class="story-point">
+                        <div class="story-number">2</div>
+                        <div class="story-content">
+                            <p>「〇〇テキスト」など具体的な表現で示す場合は、<span class="highlight-marker">実際に何を指すか明確</span>にする</p>
+                        </div>
+                    </div>
+                    <div class="story-point">
+                        <div class="story-number">3</div>
+                        <div class="story-content">
+                            <p><span class="highlight-marker">技術的な説明と権利に関わる内容を区別</span>して説明する</p>
+                        </div>
+                    </div>
+                    
+                    <div class="handdrawn-box">
+                        <div class="handdrawn-box-title">リスク管理</div>
+                        <div class="tag">#コンテンツ公開前の関係者確認</div>
+                        <div class="tag">#グレーゾーンはケースバイケース</div>
+                        <div class="tag">#問題指摘時は速やかに対応</div>
+                        <div class="tag">#ガイドラインの定期的見直し</div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2 class="section-title">実施プロセス</h2>
+                    <div class="process-flow">
+                        <div class="process-step">
+                            <div class="process-circle">
+                                <div class="process-number">1</div>
+                            </div>
+                            <div class="process-text">コンテンツ企画<br>公開範囲の決定</div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-circle">
+                                <div class="process-number">2</div>
+                            </div>
+                            <div class="process-text">制作段階<br>ガイドライン確認</div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-circle">
+                                <div class="process-number">3</div>
+                            </div>
+                            <div class="process-text">公開前<br>最終チェック</div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-circle">
+                                <div class="process-number">4</div>
+                            </div>
+                            <div class="process-text">公開後<br>モニタリング</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quote" style="background-color: rgba(89, 60, 71, 0.05); border-left-color: #593C47; margin-top: 25px;">
+                        <p style="text-align: center; font-weight: bold; font-size: 18px;">
+                            本ガイドラインを活用し、<br>
+                            <span style="font-size: 22px; color: #F24405;">先進的な取り組みと適切なリスク管理を両立</span><br>
+                            させながら、価値ある情報発信を行っていきます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            生成AIコンテンツ共有ガイドライン | 2025年4月9日作成
+        </div>
+    </div>
+</body>
+</html>
