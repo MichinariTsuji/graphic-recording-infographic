@@ -287,6 +287,42 @@
             border-top: 1px dashed #F25C05;
         }
         
+        .cta-container {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .cta-text {
+            font-size: 16px;
+            font-weight: bold;
+            color: #593C47;
+            margin: 0;
+            max-width: 400px;
+            line-height: 1.4;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(45deg, #F25C05, #F24405);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 16px;
+            transform: rotate(-1deg);
+            box-shadow: 3px 3px 0 rgba(89, 60, 71, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: rotate(0deg) scale(1.05);
+            box-shadow: 4px 4px 0 rgba(89, 60, 71, 0.3);
+        }
+        
         .handdrawn-box {
             border: 2px solid #F25C05;
             border-radius: 15px;
@@ -758,6 +794,10 @@
         
         <div class="footer">
             生成AIコンテンツ共有ガイドライン | 2025年4月版
+            <div class="cta-container">
+                <p class="cta-text">店舗経営 の 生成AI 活用について 配信しています</p>
+                <a href="https://x.com/aiadvisorg2" target="_blank" class="cta-button">登録する</a>
+            </div>
         </div>
     </div>
 </body>
